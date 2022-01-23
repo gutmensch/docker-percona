@@ -11,7 +11,8 @@ RUN usermod -u $MYSQL_UID mysql \
   && groupmod -g $MYSQL_GID mysql \
   && bash -c "find / -uid 1001 -exec chown ${MYSQL_UID}:${MYSQL_GID} {} \; || true" \
   && mkdir /var/backup \
-  && chown $MYSQL_UID:$MYSQL_GID /var/backup
+  && chown $MYSQL_UID:$MYSQL_GID /var/backup \
+  && chown $MYSQL_UID:$MYSQL_GID /var/log/mysql
 
 VOLUME ["/var/backup"]
 
