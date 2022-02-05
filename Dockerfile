@@ -20,7 +20,7 @@ RUN usermod -u $MYSQL_UID mysql \
   && chown -R $MYSQL_UID:$MYSQL_GID /etc/ssl/certs/mysqldb \
   && chmod 400 /etc/ssl/certs/mysqldb/server.key \
   # centos specific trust update \
-  && cp /etc/ssl/certs/mysqldb/ca.crt /etc/pki/ca-trust/source/anchors/docker_root_ca.crt \
+  && ln -s /etc/ssl/certs/mysqldb/ca.crt /etc/pki/ca-trust/source/anchors/docker_root_ca.crt \
   && update-ca-trust \
   # fail build if verify fails \
   && openssl verify -verbose /etc/ssl/certs/mysqldb/server.crt
