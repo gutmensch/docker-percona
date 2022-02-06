@@ -2,7 +2,7 @@ ARG IMAGE_VERSION=8.0.26-17
 
 FROM registry.n-os.org:5000/root-ca:20220205 AS certs
 
-FROM percona/percona-server:$MYSQL_VERSION
+FROM percona/percona-server:$IMAGE_VERSION
 
 ARG IMAGE_UID=2020
 ARG IMAGE_GID=2020
