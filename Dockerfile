@@ -17,8 +17,8 @@ RUN usermod -u $IMAGE_UID mysql \
   && bash -c "find / -uid 1001 -exec chown ${IMAGE_UID}:${IMAGE_GID} {} \; || true" \
   && mkdir /var/backup \
   && chown $IMAGE_UID:$IMAGE_GID /var/backup \
-  && /etc/ssl/certs/mysqldb/setup.sh ${IMAGE_UID}
+  && /etc/ssl/certs/mysqldb/setup.sh $IMAGE_UID
 
 VOLUME ["/var/backup"]
 
-USER mysql
+USER $IMAGE_UID
