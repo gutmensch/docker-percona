@@ -1,4 +1,4 @@
-ARG MYSQL_VERSION=8.0.26-17
+ARG IMAGE_VERSION=8.0.26-17
 
 FROM registry.n-os.org:5000/root-ca:20220205 AS certs
 
