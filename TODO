@@ -1,0 +1,7 @@
+INSTALL PLUGIN authentication_ldap_simple 
+ SONAME 'authentication_ldap_simple.so';
+SET GLOBAL authentication_ldap_simple_server_host = 'hostname';
+SET GLOBAL authentication_ldap_simple_bind_base_dn
+  = 'ou=people,dc=example,com=com';
+CREATE USER ldapuser IDENTIFIED WITH ldap_simple 
+  BY 'cn=ldapuser,ou=people,dc=example,com=com';

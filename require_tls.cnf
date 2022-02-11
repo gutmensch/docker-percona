@@ -1,5 +1,6 @@
 [mysqld]
-require_secure_transport=on
+# needs fixing in nextcloud and dmarc-report
+require_secure_transport=off
 tls_version=TLSv1.2,TLSv1.3
 ssl_ca=/etc/ssl/certs/ca.crt
 ssl_cert=/etc/ssl/certs/server.crt
